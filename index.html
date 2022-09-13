@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>TETRIS</title>
+</head>
+<body>
+    <h3>Score: <span id="score">0</span></h3>
+
+    <button id="start-button">Start/Pause</button>
+
+
+     <div class="grid">
+        <div class="left"></div>
+        <div></div> 
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 11 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 21 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 31 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 41 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 51 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 61 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 71 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 81 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 91 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 101 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 111 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 121 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 131 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 141 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 151 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 161 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 171 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!--181 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- 191 -->
+        <div class="left"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="right"></div>
+        <!-- bottom divs -->
+        <div class="bottom left"></div>
+        <div class="bottom"></div>
+        <div class="bottom"></div>
+        <div class="bottom"></div>
+        <div class="bottom"></div>
+        <div class="bottom"></div>
+        <div class="bottom"></div>
+        <div class="bottom"></div>
+        <div class="bottom"></div>
+        <div class="bottom right"></div>
+     </div>
+
+
+
+</body>
+</html>

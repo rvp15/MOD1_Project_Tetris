@@ -1,0 +1,15 @@
+.grid{
+    width: 220px;
+    height: 440px;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+}
+.grid div{
+    height: 20px;
+    width: 20px;
+    border: 1px solid black ;
+}
+.tetromino{
+    background-color: bisque;
+}
