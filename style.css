@@ -1,3 +1,7 @@
+*{
+    padding: 0;
+    margin: 0;
+   }
 .grid{
     width: 220px;
     height: 440px;
@@ -8,8 +12,27 @@
 .grid div{
     height: 20px;
     width: 20px;
-    border: 1px solid black ;
+     border: 1px solid aquamarine ;
 }
 .tetromino{
-    background-color: bisque;
+    background-color: rgb(248, 187, 113);
+}
+.mini-grid{
+    background-color: yellow;
+    width: 90px;
+    height: 95px;
+    border: 1px solid black;
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.mini-grid div{
+    height: 20px;
+    width: 20px;
+    border: 1px solid yellow ;
+}
+.container{
+    display: flex;
+    justify-content:center;
+   
 }
