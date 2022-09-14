@@ -9,7 +9,7 @@
         // console.log(squares)
 
         const width=10
-       
+        let timer = false
     //The Tetrominoes
     const lTetromino = [
         [1, width+1, width*2+1, 2],
@@ -55,10 +55,19 @@
     let random = Math.floor(Math.random()*theTetrominoes.length)
     let currentTetromino = theTetrominoes[random][currentRotation]
     console.log(currentTetromino)
-    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     //Adding click event to start/pause button
+     startBtn.addEventListener('click',()=>{
+        if(timer){ // if timer= true, 
+            clearInterval(timer) //then clear timer
+            timer = false //reassign timer=false
+        }else{
+            draw()
+            timer = setInterval(moveDown,1000) // initialize timer 
+        }
+})
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Draw Tetrominoe:
-    draw()
     function draw(){
        currentTetromino.forEach((index)=>{
             squares[currentPosition+index].classList.add('tetromino')
@@ -90,7 +99,7 @@
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Move the currentTetrominoe down by one square each time. we are using setInterval method to invoke a function in specified time interval
     //use a variable to assign the timer so that we can remove it later
-    timer=setInterval(moveDown,1000) //moveDown function is called continously in specified time interval
+    // timer=setInterval(moveDown,1000) //moveDown function is called continously in specified time interval
     function moveDown(){
         unDraw()//First undraw the currentTetromino from its currentPosition
         currentPosition +=width // move down by changing currentPosition(4) to 14 by adding 10 to it
@@ -122,7 +131,7 @@
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Setting boundary for left side
-    //tetromino can move left side( currentPosition -=1) as long as any one square doesnt have class left
+    //tetromino can move left side( currentPosition -=1) as long as any one square doesnt have class "left"
     function moveLeft(){
     unDraw()
     let isLeft = currentTetromino.some(index=> squares[currentPosition+index+width].classList.contains('left'))
@@ -138,7 +147,7 @@
     function moveRight(){
         unDraw()
         let isright = currentTetromino.some(index=> squares[currentPosition+index+width].classList.contains('right'))
-        if(!isright) {
+        if(!isright) {  //tetromino can move right side( currentPosition +=1) as long as any one square doesnt have class "right"
             currentPosition +=1
         }// to avoid overlapping => check for class "bottom" as freezed squares will now be added with class "bottom", if trying to overlap move back
         if(currentTetromino.some(index=> squares[currentPosition+index+width].classList.contains('bottom'))){
@@ -183,8 +192,7 @@
         })
  }
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////  
- //Adding click event to start/pause button
 
- 
+
 
     })
