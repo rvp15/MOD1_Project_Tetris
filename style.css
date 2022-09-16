@@ -1,38 +1,70 @@
 *{
-    padding: 0;
-    margin: 0;
-   }
-.grid{
-    width: 220px;
-    height: 440px;
-    background-color: aquamarine;
+  overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+        align-items: center;
+    position: relative;
+    top: 10px;
+
+  }
+  .sideBoard{
+    display: flex;
+    flex-direction: column;
+   width:100px;
+   margin-right: 30px;
+  
+  }
+  
+  
+  .grid {
+    width: 320px;
+    height: 650px;
     display: flex;
     flex-wrap: wrap;
-}
-.grid div{
-    height: 20px;
-    width: 20px;
-     border: 1px solid aquamarine ;
-}
-.tetromino{
-    background-color: rgb(248, 187, 113);
-}
-.mini-grid{
-    background-color: yellow;
-    width: 90px;
-    height: 95px;
-    border: 1px solid black;
-    margin: 50px;
+    background-color: rgb(179, 207, 209);
+    
+  }
+  
+  .grid div {
+    height: 28px;
+    width: 28px;   
+    margin:1px; 
+    border:1px solid transparent;
+  }
+  
+  .tetromino {
+    background-color: rgb(243, 209, 96);
+  }
+  
+  
+  .mini-grid {
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
     display: flex;
     flex-wrap: wrap;
-}
-.mini-grid div{
+    background-color: rgb(145, 165, 192);
+    border: 2px solid;
+    align-content: flex-start;
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+  
+  .mini-grid div {
     height: 20px;
     width: 20px;
-    border: 1px solid yellow ;
-}
-.container{
-    display: flex;
-    justify-content:center;
-   
-}
+    margin:1px; 
+    border:1px solid transparent;
+  }
+
+  .game-over{
+    position: absolute;
+    background: linear-gradient(#ebedeefd, #02bdbdfd);
+    top: 40%;
+    left: 44%;
+    border-radius: 20px;
+    padding: 20px;
+  }
