@@ -5,12 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.querySelector("#start-button");
 
   const grid = document.querySelector(".grid");
-  const squares = Array.from(document.querySelectorAll(".grid div")); // Change the collection into an array //querySelector All gives htmlcollection which can be accessed by index starting 0,it returns static nodelist which means new element added will not cbe added but in contrast The getElementsByClassName() and getElementsByTagName() methods return a live HTMLCollection
+  let squares = Array.from(document.querySelectorAll(".grid div")); // Change the collection into an array //querySelector All gives htmlcollection which can be accessed by index starting 0,it returns static nodelist which means new element added will not cbe added but in contrast The getElementsByClassName() and getElementsByTagName() methods return a live HTMLCollection
   // console.log(squares)
 
   const width = 10;
   let timer = false;
-  let nextRandom = 0;
   let score = 0;
   const colors = ['#FF0D72',
   '#0DC2FF',
@@ -66,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Make starting position of tetris in middle (index 5)
   let random = 0
+  let nextRandom = 0;
   let currentPosition = 4;
   let currentRotation = 0; //choose first shape from the array from each theTetrominos array
   let currentTetromino = theTetrominoes[0][0];
@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //Adding click event to start/pause button
   startBtn.addEventListener("click", () => {
+    
     if (timer) {
       // if timer= true,
       clearInterval(timer); //then clear timer
@@ -84,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       draw();
       timer = setInterval(moveDown, 1000); // initialize timer
-      nextRandom = Math.floor(Math.random() * theTetrominoes.length);
+      // nextRandom = Math.floor(Math.random() * theTetrominoes.length);
       displayNext();
     }
   });//////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,7 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //Draw Tetrominoe:
   function draw() {
+    
     console.log(`cp ${currentPosition}`)
+    console.log(currentTetromino)
     currentTetromino.forEach((index) => {
       squares[currentPosition + index].classList.add("tetromino");
       squares[currentPosition+ index].style.backgroundColor = colors[random];   
@@ -148,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
       draw();
       displayNext();
   }
-
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////
   function freeze() {
     //check if any(some) of the squares in currentTetromino contains class bottom. add class "bottom to all the index of current tetromino"
     //Start with next new tetromino
@@ -157,9 +160,12 @@ document.addEventListener("DOMContentLoaded", () => {
         squares[currentPosition + index + width].classList.contains("bottom")
       )
     ) {
+      console.log(`Reached bottom add bottom`)
       currentTetromino.forEach((index) =>
         squares[currentPosition + index].classList.add("bottom")
       );
+      console.log(`added cls bottom to ${currentTetromino}`)
+      console.log(`added cls bottom to ${currentPosition}`)
       //Start a new tetromino falling:
       startNewTetromino()
       updateScore();
@@ -239,57 +245,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////
   function updateScore() {
+    // const removedItems = [];
     for (let i = 0; i < 199; i += width) {
       const eachRow = [i,i+1,i+2,i+3,i+4,i+5,i+6,i+7,i+8,i+9]//checking row by row
       if (
         eachRow.every((index) => squares[index].classList.contains("bottom"))) {//if all the index in a row has class "bottom"
+          console.log(`${eachRow}`)
         score += 5; //increase score
         scoreBoard.innerHTML = score;
-        eachRow.forEach((index) => {
+       eachRow.forEach((index) => {
           squares[index].classList.remove("bottom"); //remove class "bottom" "tetromino" in that row
           squares[index].classList.remove("tetromino");
           squares[index].style.backgroundColor = "";
         });
+       
         const removedRow = squares.splice(i, width); // remove the row by splicing
-        console.log(removedRow)
-         removedRow.concat(squares); // add removed squares back to squres grid
-        squares.forEach(cell => grid.appendChild(cell));
+        console.log(`removedRow${removedRow}`)
+        squares = removedRow.concat(squares);
+          // console.log(squares)
+        squares.forEach(cell => grid.appendChild(cell));  
       }
     }
+   
   }
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//   function updateScore(){
-//     // loop for each row start index
-//     for(let i =0;i<199; i+=width) {
-//         // all the columns of a row
-//         let row=[i,i+1,i+2,i+3,i+4,i+5,i+6,i+7,i+8,i+9];
-        
-//         if(row.every(index => squares[index].classList.contains('bottom'))) {
-//             score +=10;
-//             scoreBoard.innerHTML = score;
-//             row.forEach(index => {
-//                 squares[index].classList.remove('bottom');
-//                 squares[index].classList.remove('tetromino');
-//                 squares[index].style.backgroundColor="black";
-//             });
-//             const squaresRemoved = squares.splice(i,width);     
-//             console.log(squaresRemoved)          
-//             // add the removed squares to top              
-//              squaresRemoved.concat(squares);
-//              console.log(squares)
-//              squares.forEach(cell => grid.appendChild(cell));
-//            currentPosition = 4
-//         }
-//     }
-// }
-///////////////////////////////////////////////
 function gameOver(){
-let i=0;
-    const firstrow = [i,i+1,i+2,i+3,i+4,i+5,i+6,i+7,i+8,i+9]//checking row by row
-    console.log(firstrow)
-    if (firstrow.some((index) => squares[index].classList.contains("bottom"))){
+
+    if (currentTetromino.some(index=> squares[currentPosition+index].classList.contains('bottom'))){
       console.log(`gameover`)
       clearInterval(timer)
+      unDraw()
       timer=false
       const body =document.getElementsByTagName('body')
       const gameover = document.createElement("div")
