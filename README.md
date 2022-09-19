@@ -30,5 +30,10 @@ modularizing the project for better reusability of code.
 
 Grid layout:
 ![image](https://user-images.githubusercontent.com/110572735/191032910-aebf22a6-79f1-446e-a9aa-b513a5a5c8fc.png)
+![image](https://user-images.githubusercontent.com/110572735/191057211-39824c8b-da90-430f-a53b-0dba064116ac.png)
+
+
+
 ![image](https://user-images.githubusercontent.com/110572735/191055582-0bae4b0e-33aa-467b-af60-1d896004654a.png)
+
 
