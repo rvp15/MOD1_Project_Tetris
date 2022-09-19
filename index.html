@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <title>TETRIS</title>
-</head>
-<body>
- 
- 
- <h3>Score: <span id="score">0</span></h3>
- <h3>Time Left: <span id="time"></span></h3>
-<div class="container">
-    <div class="sideBoard">
-       
-    
-        <button id="start-button">Start/Pause</button>
+  </head>
+  <body>
+    <video id="videoBG" autoplay muted loop>
+        <source src="galaxy.mp4" type="video/mp4">
+       </video> 
+      
+    <div class="players">
+      <!-- <h2>Player 1</h2>
+      <br /> -->
+      <input type="text" id="player1name" placeholder="Enter Player1 Name" value="player1"/>
+      <!-- <h2>Player 2</h2>
+      <br /> -->
+      <input type="text" id="player2name" placeholder="Enter Player2 Name" value="player2"/>
+      <button id="submit">Let's Play</button>
+    </div>
+    <h3 id="heading">TETRIS</h3>
+    <div class="container">
+      <div class="sideBoard">
+        <button id="start-button">Start/Hold</button>
+        <div class="currentplayer">Player: <span id="cp"></span></div>
+        <div class="score-board">Score: <span id="score">0</span></div>
       </div>
-    <div class="grid">
+      <div class="grid">
         <div></div>
         <div></div>
         <div></div>
@@ -232,26 +242,42 @@
         <div class="bottom"></div>
         <div class="bottom"></div>
         <div class="bottom"></div>
+      </div>
+      <div class="right-side-board">
+        <h3 id="next-block">Next Block</h3>
+        <div class="mini-grid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <!-- <h3>Time Left: <span id="time">0</span></h3> -->
+        <h3 id="lin">Lines Cleared: <span id="line">0</span></h3>
+        <div class="arrow">
+          <span class="arr"><ion-icon name="arrow-back-circle-outline"></ion-icon> Left</span>
+          <span class="arr"><ion-icon name="arrow-forward-circle-outline"></ion-icon> Right</span>
+          <span class="arr"><ion-icon name="arrow-up-circle-outline"></ion-icon> Rotate</span>
+          <span class="arr"><ion-icon name="arrow-down-circle-outline"></ion-icon> Down Faster</span>
+          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </div>
+      </div>
     </div>
-<div class="mini-grid">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-</div>
-</div>
-
-</body>
+    <audio controls autoplay loop>
+      <source src="audio1.mp3" type="audio/mp3">
+   </audio>
+   <button id="re">ReStart</button>
+  </body>
 </html>
