@@ -368,6 +368,9 @@ document.addEventListener("DOMContentLoaded", () => {
         gameDiv = document.querySelector('.game-over')
         console.log(gameDiv)
         gameDiv.style.visibility = "hidden";
+        if(gameDiv){
+          gameDiv.remove()
+        }
         decideGamer2orWinner()
       });
     }
