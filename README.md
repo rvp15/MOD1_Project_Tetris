@@ -17,6 +17,10 @@ Step2:Player1 Starts game, The turn ends when the players reaches top else when 
 step3:Player2 starts games and ends with above condition 
 step4:Depending on score winner is decided 
 
+Js methods:
+forEach(),Some(),contains(),add(),remove(),every()
+
+
 Future Implementation
 
 modularizing the project for better reusability of code.
