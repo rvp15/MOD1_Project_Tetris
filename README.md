@@ -20,3 +20,4 @@ step4:Depending on score winner is decided
 Future Implementation
 
 modularizing the project for better reusability of code. 
+![image](https://user-images.githubusercontent.com/110572735/191032910-aebf22a6-79f1-446e-a9aa-b513a5a5c8fc.png)
