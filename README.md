@@ -28,3 +28,5 @@ modularizing the project for better reusability of code.
 
 Grid layout:
 ![image](https://user-images.githubusercontent.com/110572735/191032910-aebf22a6-79f1-446e-a9aa-b513a5a5c8fc.png)
+![image](https://user-images.githubusercontent.com/110572735/191055582-0bae4b0e-33aa-467b-af60-1d896004654a.png)
+![Typical_Tetris_Game svg](https://user-images.githubusercontent.com/110572735/191055910-fe500158-90ff-470e-85f3-b6788c97ee24.png)
